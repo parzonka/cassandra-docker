@@ -1,0 +1,11 @@
+# other scm
+.svn
+.CVS
+.hg*
+
+#OSX
+target/
+Safari*OLD*
+.DS_Store
+.metadata
+Icon?
