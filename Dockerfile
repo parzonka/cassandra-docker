@@ -9,6 +9,7 @@ RUN printf "deb http://debian.datastax.com/datastax-ddc $CASSANDRA_VERSION main"
 	apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/* && rm /etc/apt/sources.list.d/cassandra.sources.list
 
 COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["/bin/bash"]
