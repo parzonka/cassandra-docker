@@ -29,7 +29,7 @@ fi
 
 # prevent errors when joining multiple nodes concurrently to empty cluster ("2 minute rule" should apply only when cluster has data)
 if [ "$AUTO_BOOTSTRAP" = "false" ] ; then
-	printf "\n#faster cluster initialization, do not set to false when joining an empty node to a cluster which has data\nauto_bootstrap=false\n" >> /etc/cassandra/cassandra.yaml 
+	printf "\n# faster cluster initialization, do not set to false when joining an empty node to a cluster which has data\nauto_bootstrap: false\n" >> /etc/cassandra/cassandra.yaml 
 fi
 
 service cassandra start && sleep 3
