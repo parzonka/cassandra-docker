@@ -4,9 +4,9 @@
 IP=`hostname --ip-address | cut -f 1 -d ' '`
 
 if [ -z "$CLUSTER_NAME" ]; then 
-	sed -i -e "s/^# cluster_name:.*/cluster_name: Test Cluster/" /etc/cassandra/cassandra.yaml
+	sed -i -e "s/^cluster_name:.*/cluster_name: Test Cluster/" /etc/cassandra/cassandra.yaml
 else 
-	sed -i -e "s/^# cluster_name:.*/cluster_name: $CLUSTER_NAME/" /etc/cassandra/cassandra.yaml
+	sed -i -e "s/^cluster_name:.*/cluster_name: $CLUSTER_NAME/" /etc/cassandra/cassandra.yaml
 fi
 
 # rpc_address is for client communication. we use a wildcard to listen on all available interfaces 
